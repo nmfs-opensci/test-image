@@ -1,6 +1,4 @@
 channels:
-  - pytorch
-  - eumetsat
   - conda-forge
 dependencies:
   # dupe repo2docker constraints # TODO avoid?
@@ -10,9 +8,10 @@ dependencies:
   - jupyterhub-singleuser=5.*
   - notebook=6.*
   ## Core scientific python stack
-  - dask
+  - dask[array,distributed]
+  - dask-image
   - dask-geopandas
-  - flox
+  - flox>=0.7.2,<1.0.0
   - networkx
   - numba
   - numpy<2.0
@@ -22,6 +21,9 @@ dependencies:
   - scipy
   - statsmodels
   - xarray
+  - xarray-datatree==0.0.6
+  ## echopype
+  - echopype
   ## Core visualization packages
   - bokeh
   - cartopy
@@ -35,29 +37,30 @@ dependencies:
   - python-graphviz
   - seaborn
   ## Other science packages
-  # Machine-learning
-  - pytorch
-  - torchvision
-  - cpuonly
   # Geospatial
   - geopandas
-  # - pygmt
   - rasterio
   - rioxarray
-  - satpy
-  # ThoMaS dependencies
-  - cdsapi
-  - ephem
-  - eumdac
+  - geopy
   # Other science packages
   - pvlib
+  - jinja2
+  - psutil>=5.9.1
+  - requests
+  - bottleneck
+  - pytz
+  - aiohttp
+  - pynmea2
   ## File formats and file management, download, dataset caching
   - awscli
   - earthaccess
   - h5netcdf
+  - netCDF4>1.6
   - kerchunk
   - pillow
   - zarr
+  - s3fs
+  - fsspec
   # gh-scoped-creds allows users to securely push to GitHub from their repo.
   # https://blog.jupyter.org/securely-pushing-to-github-from-a-jupyterhub-3ee42dfdc54f has
   # some more information
