@@ -12,4 +12,4 @@ How to use?
 This uses [repo2docker](https://repo2docker.readthedocs.io/en/latest/config_files.html) and a GitHub Action in `.github/workflows` to build the image and push to `ghcr.io` (the GitHub image repository).
 
 * Edit Python modules in `conda/environment.yaml`. The GitHub Action in `.github` will create the conda-lock file.
-* Edit other files in `binder` directory for the image. The `repo2docker` GitHub Action in `.github` will rebuild the image. Read about other files you can add to the `binder` directory and how they will be used [here](https://repo2docker.readthedocs.io/en/latest/config_files.html).
+* Edit other files in `binder` directory for the image. The `repo2docker` GitHub Action in `.github` will rebuild the image. Read about other files you can add to the `binder` directory and how they will be used [here](https://repo2docker.readthedocs.io/en/latest/config_files.html).  Make sure to update the push criteria in `.github/workflows/repo2docker.yaml` if you add files to the `binder` directory.
